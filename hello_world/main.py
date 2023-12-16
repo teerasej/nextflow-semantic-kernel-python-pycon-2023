@@ -24,31 +24,25 @@ def main():
         kernel.add_text_completion_service(
             "dv", OpenAITextCompletion("text-davinci-003", api_key, org_id)
         )
-        kernel.add_chat_service(
-            "chat", OpenAIChatCompletion("gpt-4-32k", api_key, org_id)
-        )
+        # kernel.add_chat_service(
+        #     "chat", OpenAIChatCompletion("gpt-4-32k", api_key, org_id)
+        # )
 
     skills_directory = "skills"
 
-    pycon_skill = kernel.import_semantic_skill_from_directory(
-        skills_directory, "PyconSkill"
+    fun_skill = kernel.import_semantic_skill_from_directory(
+        skills_directory, "FunSkill"
     )
 
-    event_suggest_function = pycon_skill["EventSuggest"]
+    joke_function = fun_skill["Joke"]
 
-    res = event_suggest_function("AI")
+    # The "input" variable in the prompt is set by "content" in the ContextVariables object.
+    context_variables = ContextVariables(
+        content="time travel to dinosaur age", variables={"style": "standup comedy"}
+    )
+    result = joke_function(variables=context_variables)
 
-    print(res.result)
-
-    # joke_function = fun_skill["Joke"]
-
-    # # The "input" variable in the prompt is set by "content" in the ContextVariables object.
-    # context_variables = ContextVariables(
-    #     content="time travel to dinosaur age", variables={"style": "standup comedy"}
-    # )
-    # result = joke_function(variables=context_variables)
-
-    # print(result.result)
+    print(result.result)
 
     # You can also invoke functions like this
     # result = await jokeFunction.invoke_async("time travel to dinosaur age")
