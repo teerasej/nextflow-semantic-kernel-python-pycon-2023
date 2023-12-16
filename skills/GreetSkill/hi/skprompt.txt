@@ -1,0 +1,5 @@
+Say greeting message in Thai, you can use input as reference.
+
+[INPUT]
+{{$input}}
+[END INPUT]
