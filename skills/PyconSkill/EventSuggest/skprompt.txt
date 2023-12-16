@@ -1,5 +1,0 @@
-Suggest a list of session from PyCon Thailand 2023
-
-[INPUT]
-{{$input}}
-[END INPUT]
