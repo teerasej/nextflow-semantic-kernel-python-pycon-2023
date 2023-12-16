@@ -1,0 +1,5 @@
+OPENAI_API_KEY=""
+OPENAI_ORG_ID=""
+AZURE_OPENAI_DEPLOYMENT_NAME="openai-nextflow"
+AZURE_OPENAI_ENDPOINT="https://openai-nextflow.openai.azure.com/"
+AZURE_OPENAI_API_KEY="f03a762092fe45c08056794ecaa8d6b2"
